@@ -1,0 +1,87 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Cảm ơn Pé đã giúp Anh bình tĩnh hơn",
+    description:
+    `Mặc dù pé biết anh không phải là người bình tĩnh nhất nhưng anh rất cảm 
+động khi pé luôn ở bên cùng anh, calm anh xuống rồi chúng ta  cùng nhau giải 
+quyết ^^ ở bên pé chúng ta là một team buê đuê mẹn moẽ`,
+    icon: "mdi:handshake",
+  },
+  {
+    title: "Cảm ơn Pé đã dạy cho anh văn hóa việt",
+    description:
+    "Từ lúc từ nhỏ tới giờ anh luôn rất bài trừ những thứ liên quan tới việt nam. Cảm ơn pé như đã mở mang cho tôi một chân trời mới, phát hiện ra những thứ mà đối với pé và bao bạn trẽ việt nam khác thấy bình thuờng là một trải nghiệm rất là thú vị :)) thịt lun á siu hài, giống như mình đi tìm lại một phần tuổi thơ mất đi dị",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Cảm ơn Pé vì Journals",
+    description:
+    `Cảm ơn pé đã mở lòng mình trong những trang journals mình viết, cũng vì journal mà anh 
+đã lần đầu trong đời mình bộc lộ thật sự những cảm giác bên trong bấy lâu nay của mình 
+ điều ấy đã làm anh cảm thấy như mình không cô đơn nữa rằng vẫn còn ai đó trong thế giới này 
+có thể hiểu mình.`,
+    icon: "mdi:directions-fork",
+  },
+  {
+    title: "Cảm ơn pé vì đã dạy cách để can đảm hơn",
+    description:
+    `Cảm ơn pé đã luôn tin vào anh, những lúc anh đang thấy do dự về khả năng của mình 
+    , những lúc muốn bỏ cuộc. Anh vẫn không muốn bản thân bỏ đi tại vì những lời 
+động viên khích lệ của pé, niềm tin của pé rằng chúng ta sẽ làm được khiến anh không 
+muốn phụ lòng pé và tự tin tiến tới.
+    `,
+    icon: "mdi:graph",
+  },
+  {
+    title: "Cảm ơn pé vì đã cảm thông",
+    description:
+    `Cảm ơn pé vì đã siêu tâm lí nha, đôi khi những lúc anh đang trong thế 
+kẹt, nhưng pé đã không giẫy nãy hay làm gì, pé siu tâm lí hiểu cho anh. Cảm ơn 
+những hi sinh ấy của pé. Pé ơiiii soa pé tuyệt vời quá dạ.`,
+    icon: "mdi:search-web",
+  },
+  {
+    title: "Cảm ơn Pé đã vững niềm tin trong đại dương đen",
+    description:
+    `Mặc dù lúc anh mới biết pé buồn và vô vọng anh cũng rất hoảng loạn và panic 
+nhưng cảm ơn Pé luôn reach out và chia sẻ với mọi người, cần một sự can đảm rất 
+lớn để có thể show cho mọi người thấy phần yếu nhất của bản thân mình ^^.
+Sau mọi thứ cũng có thể thấy được rằng Pé vẫn còn rất nhiều người thân và bạn quan 
+tâm yêu thương mình ^^ Pé, you are not alone.
+`,
+    icon: "mdi:account-group",
+  },
+];
+---
+
+<ContentSection title="Lời cảm ơn" id="features">
+  <Fragment slot="lead">
+    <!-- Astro comes <span class="text-primary">batteries included</span>. It takes -->
+    <!-- the best parts of -->
+    <!-- <span class="text-primary">state-of-the-art</span> -->
+    <!-- tools and adds its own <span class="text-primary">innovations</span>. -->
+    Ngọc Anh ơi mặc dù những chặng đường chúng ta đi có nhiều gập gềnh và éo le 
+    nhưng quan trọng là anh rất cảm ơn Ngọc Anh vì đã chịu đựng được tất cả điều đó 
+    và cùng tiến tới cùng với nhau.  
+    <br>
+    <span class="text-primary">Cặp đôi chúng ta là vô địt bẹt bẹtttttttt. </span>
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

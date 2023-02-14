@@ -1,0 +1,30 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import ShowcaseCard from "~/components/showcase-card.astro";
+import { getShowcase } from "~/data/showcase";
+
+const sites = await getShowcase();
+---
+
+<ContentSection title="Những cuộc phiêu lưu" id="showcase">
+  <Fragment slot="lead">
+    <!-- Astro is <span class="text-primary">versatile</span>.{" "} -->
+    <!-- <span class="text-primary">Explore</span> what's possible and get{" "} -->
+    <!-- <span class="text-primary">inspired</span>. -->
+    Mặc dù dịch vụ lữ hành TrAnh đôi khi có nhiều bất cập trong chuyến đi, nhưng 
+    cty vẫn đang làm ăn phát đạt lắm nha ^^, 
+    <span class="text-primary">mỗi chuyến đi với pé đáng nhớ thẹt như trong phim ga dị</span>.
+    dui ơi là dui.
+    Mong Cty sẽ luôn làm tour đi nhiều hơn nữa. Đánh giá 10/10
+  </Fragment>
+  <div class="max-w-6xl space-y-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {sites.map((site) => <ShowcaseCard site={site} />)}
+    </div>
+    <!-- <p class="text-right text-sm"> -->
+    <!--   <a class="text-primary" href="https://astro.build/showcase/"> -->
+    <!--     ...and more &rarr; -->
+    <!--   </a> -->
+    <!-- </p> -->
+  </div>
+</ContentSection>
